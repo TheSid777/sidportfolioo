@@ -1,0 +1,956 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Syncopate', sans-serif;
+}
+
+
+::selection {
+    background-color: white;
+    color: black;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #41384b;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: red;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #232323;
+}
+
+/*--------------- navbar start ---------------*/
+.navbar {
+    height: 50px;
+    width: 100%;
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: start;
+}
+
+.left i {
+    display: none;
+}
+
+.center {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center a {
+    margin: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 10px;
+    transition: all .5s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.center a:hover {
+    color: red;
+}
+
+.center a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    transform: scale(0);
+    transition: transform .3s;
+}
+
+.center a:hover::after {
+    transform: scale(1);
+}
+
+.right {
+    height: 100%;
+    width: 30%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right a {
+    text-decoration: none;
+    color: white;
+}
+
+.right i {
+    margin-left: 20px;
+    transition: all .5s ease;
+}
+
+.right i:hover {
+    color: red;
+    transform: scale(1.3);
+}
+
+@media (max-width: 1050px) {
+    .navbar {
+        height: 100px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        transition: .5s linear;
+    }
+
+    .navbar.active{
+        height: 500px;
+    }
+
+    .left {
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .left i {
+        font-size: 25px;
+        color: red;
+        display: block;
+        margin-right: 15px;
+    }
+
+    .left img {
+        width: 40%;
+    }
+
+    .center {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        /* visibility: hidden; */
+    }
+    .center a{
+        font-size: 20px;
+    }
+
+    .right {
+        width: 100%;
+        height: auto;
+        margin-top: 5%;
+        /* visibility: hidden; */
+    }
+    .right i{
+        font-size: 30px;
+        margin-right: 20px;
+    }
+}
+
+body,html{
+    overflow-x: hidden;
+    width: 100%;
+}
+
+@media (max-width:550px){
+    .navbar{
+        height: 90px;
+    }
+}
+
+@media (max-width:450px){
+    .navbar{
+        height: 80px;
+    }
+}
+
+@media (max-width:350px){
+    .navbar{
+        height: 70px;
+    }
+}
+
+/* mobile navs  */
+/* .mobile-navs{
+    position: fixed;
+    top: 100px;
+    background-color: #0d0d0d;
+    width: 100%;
+    padding-bottom: 2rem;
+    transform: translateX(100%);
+    transition: .3s ease-in-out;
+    text-align: center;
+}
+
+.mobile-navs.active{
+    transform: translateX(0%);
+
+}
+
+.mobile-navs a{
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+@media (min-width:1050px){
+    .mobile-navs{
+        display: none;
+    }
+} */
+
+/*--------------- About start ----------------*/
+
+.home {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #232323;
+}
+
+.maincont {
+    width: 70%;
+    height: 100%;
+    display: block;
+    align-content: center;
+    justify-content: center;
+    color: white;
+}
+
+.maincont p {
+    margin-left: 10%;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.maincont h1,
+h2,
+button {
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.maincont button {
+    border: none;
+    color: red;
+    background-color: #0d0d0d;
+    border-radius: 20px;
+    transition: all .5s ease;
+}
+
+.maincont button:hover {
+    background-color: white;
+    color: #0d0d0d;
+    border: .5px solid red;
+}
+
+.mainpic {
+    width: 30%;
+    height: 100%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+
+}
+
+.mainpic img {
+    width: 95%;
+    height: 95%;
+    border-radius: 20px;
+}
+
+@media (max-width: 1050px) {
+    .home {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .maincont {
+        width: 100%;
+        height: auto;
+    }
+
+    .maincont p {
+        margin-left: 4%;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .mainpic {
+        margin-top: 5%;
+        width: 80%;
+        height: auto;
+        margin-right: 0;
+    }
+
+    .maincont h1,
+    h2,
+    button {
+        margin-left: 5%;
+    }
+}
+
+/*--------------- Skills start ----------------*/
+
+.skill {
+    height: 100vh;
+    width: 100%;
+}
+
+.title {
+    height: 10vh;
+    color: white;
+    text-align: center;
+}
+
+.title p {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.myskills {
+    width: 90%;
+    height: 70vh;
+    margin: 5% 5%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20vh 20vh 20vh 20vh;
+}
+
+.one {
+    margin: 20px 20px;
+    color: white;
+    background-color: #343434;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.bar {
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+    display: block;
+    border-radius: 20px;
+    background-color: #545454;
+}
+
+.html {
+    width: 90%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to left, red, #7a0202);
+    border-radius: 20px;
+    text-align: end;
+    animation: htmla 10s linear 1;
+}
+
+.html p {
+    font-size: 12px;
+    display: inline;
+    margin: 0px 10px;
+}
+
+.css {
+    width: 85%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to left, red, #7a0202);
+    border-radius: 20px;
+    text-align: end;
+    animation: cssa 10s linear 1;
+}
+
+.css p {
+    font-size: 12px;
+    display: inline;
+    margin: 0px 10px;
+}
+
+.js {
+    width: 60%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to left, red, #7a0202);
+    border-radius: 20px;
+    text-align: end;
+    animation: jsa 10s linear 1;
+}
+
+.js p {
+    font-size: 12px;
+    display: inline;
+    margin: 0px 10px;
+}
+
+.design {
+    width: 85%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to left, red, #7a0202);
+    border-radius: 20px;
+    text-align: end;
+    animation: designa 10s linear 1;
+}
+
+.design p {
+    font-size: 12px;
+    display: inline;
+    margin: 0px 10px;
+}
+
+.jquery {
+    width: 65%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to left, red, #7a0202);
+    border-radius: 20px;
+    text-align: end;
+    animation: jquerya 10s linear 1;
+}
+
+.jquery p {
+    font-size: 12px;
+    display: inline;
+    margin: 0px 10px;
+}
+
+.json {
+    width: 70%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to left, red, #7a0202);
+    border-radius: 20px;
+    text-align: end;
+    animation: jsona 10s linear 1;
+}
+
+.json p {
+    font-size: 12px;
+    display: inline;
+    margin: 0px 10px;
+}
+
+.bootstrap {
+    width: 75%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to left, red, #7a0202);
+    border-radius: 20px;
+    text-align: end;
+    animation: boots 10s linear 1;
+}
+
+.bootstrap p {
+    font-size: 12px;
+    display: inline;
+    margin: 0px 10px;
+}
+
+.react {
+    width: 55%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to left, red, #7a0202);
+    border-radius: 20px;
+    text-align: end;
+    animation: reacta 10s linear 1;
+}
+
+.react p {
+    font-size: 12px;
+    display: inline;
+    margin: 0px 10px;
+}
+
+@keyframes htmla {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes cssa {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes jsa {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes designa {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes jquerya {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 65%;
+    }
+}
+
+@keyframes jsona {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes boots {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes reacta {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 55%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .myskills {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 15% 0;
+    }
+
+    .title {
+        height: auto;
+    }
+
+    .skill {
+        height: auto;
+        width: 100%;
+        margin-top: 15%;
+    }
+}
+
+/*--------------- Project start ----------------*/
+.projects {
+    width: 100%;
+    height: 70vh;
+}
+
+.title {
+    width: 100%;
+    height: 10vh;
+}
+
+.project {
+    width: 100%;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+    color: white;
+}
+
+.project a {
+    text-decoration: none;
+    color: white;
+}
+
+.two {
+    margin: 10px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #343434;
+}
+
+.two i {
+    font-size: 30px;
+    margin-top: 5%;
+    padding: 10px;
+    background-color: #545454;
+    border-radius: 15px;
+}
+
+.two h3 {
+    margin-top: 5%;
+    color: red;
+}
+
+.two p {
+    margin-top: 5px;
+    font-size: 9px;
+    line-height: 20px;
+}
+
+@media (max-width: 1050px) {
+    .projects {
+        width: 100%;
+        height: auto;
+        margin-top: 10%;
+    }
+
+    .project {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        height: auto;
+    }
+}
+
+/*--------------- Resume start ----------------*/
+
+.resume {
+    width: 100%;
+    height: 90vh;
+}
+
+.title {
+    width: 100%;
+    height: 10vh;
+}
+
+.myresume {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.leftside {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.leftside img {
+    width: 60%;
+    height: 100%;
+    border-radius: 20px;
+    transition: all 1s ease;
+}
+
+.leftside:hover .detailone {
+    height: 30%;
+    display: block;
+}
+
+.detailone {
+    color: white;
+    width: 60%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    background-color: #000000be;
+    border-radius: 20px;
+    display: none;
+}
+
+.detailone button {
+    background-color: #232323;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    transition: all .5s ease;
+}
+
+.detailone button:hover {
+    color: red;
+    background-color: #fff;
+}
+
+.rightside {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.rightside img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.rightside:hover .detailtwo {
+    height: 30%;
+    display: block;
+}
+
+.detailtwo {
+    color: white;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000000be;
+    border-radius: 30px;
+    display: none;
+    text-align: center;
+}
+
+.detailtwo h3 {
+    margin: 20px;
+}
+
+@media (max-width: 1050px) {
+    .myresume {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+    }
+
+    .myresume h1 {
+        font-size: 10px;
+    }
+
+    .leftside {
+        width: 100%;
+        height: auto;
+    }
+
+    .rightside {
+        height: auto;
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .resume {
+        width: 100%;
+        height: auto;
+        margin-top: 15%;
+    }
+
+    .detailtwo h3 {
+        font-size: 15px;
+    }
+
+    .leftside img {
+        width: 90%;
+        height: auto;
+    }
+
+    .detailone {
+        width: 95%;
+        height: 20%;
+        position: absolute;
+        left: 0;
+    }
+
+    .detailtwo {
+        bottom: 1%;
+        left: 0;
+    }
+}
+
+/*--------------- Contact start ----------------*/
+
+.contact {
+    width: 100%;
+    height: 50vh;
+}
+
+.foots {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot {
+    width: 98%;
+    height: 93%;
+    border-radius: 20px;
+    background-color: #343434;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.add {
+    width: 45%;
+    height: 90%;
+    border-radius: 20px;
+    color: white;
+    background-color: #232323;
+}
+
+.add h3 {
+    margin-left: 10%;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.so-contact {
+    width: 50%;
+    height: 90%;
+    border-radius: 20px;
+    background-color: #232323;
+}
+
+.so-contact span {
+    color: red;
+}
+
+.so-contact h4 {
+    margin-left: 7%;
+    line-height: 20px;
+    margin-top: 5%;
+    color: white;
+}
+
+.so-contact a {
+    text-decoration: none;
+    color: white;
+}
+
+.so-contact i {
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 7%;
+    transition: all .5s ease;
+}
+
+.so-contact i:hover {
+    color: red;
+    transform: scale(1.3);
+}
+
+@media (max-width: 1050px) {
+    .contact {
+        width: 100%;
+        height: auto;
+        margin-top: 15%;
+    }
+
+    .foots {
+        width: 100%;
+        height: auto;
+    }
+
+    .foot {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .so-contact {
+        width: 90%;
+        height: auto;
+        margin: 20px;
+    }
+
+    .so-contact h4 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .add {
+        width: 90%;
+        height: auto;
+        margin: 20px;
+    }
+
+    .add h3 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+}
+
+/*--------------- copyright start ----------------*/
+
+.copyright {
+    height: 50px;
+    width: 100%;
+    color: white;
+    background-color: #0d0d0d;
+    text-align: center;
+    line-height: 15px;
+}
+
+.copyright span {
+    color: red;
+}
+
+.copyright a {
+    text-decoration: none;
+}
+@media (max-width: 1050px) {
+    .copyright {
+        margin-top: 10%;
+    }
+}

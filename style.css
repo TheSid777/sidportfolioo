@@ -177,54 +177,21 @@ body,html{
 
 @media (max-width:550px){
     .navbar{
-        height: 90px;
+        height: 70px;
     }
 }
 
 @media (max-width:450px){
     .navbar{
-        height: 80px;
+        height: 60px;
     }
 }
 
 @media (max-width:350px){
     .navbar{
-        height: 70px;
+        height: 50px;
     }
 }
-
-/* mobile navs  */
-/* .mobile-navs{
-    position: fixed;
-    top: 100px;
-    background-color: #0d0d0d;
-    width: 100%;
-    padding-bottom: 2rem;
-    transform: translateX(100%);
-    transition: .3s ease-in-out;
-    text-align: center;
-}
-
-.mobile-navs.active{
-    transform: translateX(0%);
-
-}
-
-.mobile-navs a{
-    display: block;
-    font-size: 1.5rem;
-    color: white;
-    padding: 10px 0;
-    text-decoration: none;
-    margin: 10px 0;
-}
-
-@media (min-width:1050px){
-    .mobile-navs{
-        display: none;
-    }
-} */
-
 /*--------------- About start ----------------*/
 
 .home {
@@ -952,5 +919,7 @@ button {
 @media (max-width: 1050px) {
     .copyright {
         margin-top: 10%;
+        width: 100%;
+        height: auto;
     }
 }
